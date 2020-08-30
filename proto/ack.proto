@@ -1,0 +1,39 @@
+/*
+    此文件用于定义客户端主动发起的回应
+*/
+syntax = "proto3";
+
+option go_package = "github.com/nerored/chat-test-golang/message";
+
+/*
+    用于c/s协议解析
+*/
+package message;
+
+import "err.proto";
+import "ntf.proto";
+
+//------------------------   SERVICE_API_LOGIN
+message API_LOGIN_ACK {
+    ErrCode Result = 1;
+    int64   UserID = 2;
+    string  Name   = 3;
+    repeated API_NEW_MESSAGE_NOTIFY CachedMsg = 4;
+}
+
+//------------------------   SERVICE_API_SEND
+message API_SEND_ACK {
+    ErrCode Result = 1;
+}
+
+//------------------------   SERVICE_API_STATS
+message API_STATS_ACK {
+    ErrCode Result = 1;
+    int64 JoinTime = 2;
+}
+
+//------------------------   SERVICE_API_POPULAR_WORD
+message API_POPULAR_WORD_ACK {
+    ErrCode Result = 1;
+    string Word    = 2;
+}

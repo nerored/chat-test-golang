@@ -1,0 +1,29 @@
+/*
+    此文件用于定义通信协议号，通常情况下 req/ack 为一组api
+    服务端主动发起的协议以NOTIFY结尾
+*/
+syntax = "proto3";
+
+option go_package = "github.com/nerored/chat-test-golang/message";
+
+/*
+    用于c/s协议解析
+*/
+package message;
+
+enum ChatServiceAPI {
+    SERVICE_API_UNKNOWN          = 0;
+//------ login
+    SERVICE_API_LOGIN_REQ        = 1;
+    SERVICE_API_LOGIN_ACK        = 2;
+//------ send
+    SERVICE_API_SEND_REQ         = 3;
+    SERVICE_API_SEND_ACK         = 4;
+//------ query
+    SERVICE_API_STATS_REQ        = 5;
+    SERVICE_API_STATS_ACK        = 6;
+    SERVICE_API_POPULAR_WORD_REQ = 7;
+    SERVICE_API_POPULAR_WORD_ACK = 8;
+//------ notify
+    SERVICE_API_MSG_NOTIFY       = 9;
+}

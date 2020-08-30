@@ -1,0 +1,18 @@
+/*
+    此文件用于定义通信错误码
+*/
+syntax = "proto3";
+
+option go_package = "github.com/nerored/chat-test-golang/message";
+
+/*
+    用于c/s协议解析
+*/
+package message;
+
+enum ErrCode {
+    ERR_CODE_FAILED            = 0; // 通常请求失败,原因不指定
+    ERR_CODE_SUCCESS           = 1;
+    ERR_CODE_DUPLICATE_NAME    = 2;
+    ERR_CODE_USER_IS_NOT_EXIST = 3;
+}

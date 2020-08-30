@@ -1,0 +1,24 @@
+/*
+    此文件用于定义服务端主动推送
+*/
+syntax = "proto3";
+
+option go_package = "github.com/nerored/chat-test-golang/message";
+
+/*
+    用于c/s协议解析
+*/
+package message;
+
+enum MESSAGE_TYPE {
+    MESSAGE_TYPE_UNKNOWN   = 0;
+    MESSAGE_TYPE_PRIVATE   = 1;
+    MESSAGE_TYPE_BROADCAST = 2;
+}
+
+message API_NEW_MESSAGE_NOTIFY {
+    string from       = 1;
+    string msg        = 2;
+    int64 sendUnix    = 3;
+    MESSAGE_TYPE type = 4;
+}

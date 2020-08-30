@@ -1,0 +1,16 @@
+/*
+ 日志分级
+*/
+package log
+
+type LogLv int8
+
+const (
+	LOG_LEVEL_USER LogLv = iota
+	LOG_LEVEL_DEBU
+	LOG_LEVEL_INFO
+	LOG_LEVEL_TRAC
+	LOG_LEVEL_WARN
+	LOG_LEVEL_ERRO
+	LOG_LEVEL_FATA
+)

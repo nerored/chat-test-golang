@@ -1,0 +1,32 @@
+/*
+    此文件用于定义客户端主动发起的请求
+*/
+syntax = "proto3";
+
+option go_package = "github.com/nerored/chat-test-golang/message";
+
+/*
+    用于c/s协议解析
+*/
+package message;
+
+//------------------------   SERVICE_API_LOGIN
+message API_LOGIN_REQ {
+    string name = 1;
+}
+
+//------------------------   SERVICE_API_SEND
+message API_SEND_REQ {
+    string name    = 1;
+    int64  userID  = 2;
+    string message = 3;
+}
+
+//------------------------   SERVICE_API_STATS
+message API_STATS_REQ {
+    string name    = 1;
+}
+
+//------------------------   SERVICE_API_POPULAR_WORD
+message API_POPULAR_WORD_REQ {
+}
