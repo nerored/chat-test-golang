@@ -154,6 +154,7 @@ cli包简化了终端工具交互开发的过程，通过注册command便可以�
  
 
 ```go
+
  	github.com/c-bata/go-prompt v0.2.3                        // client用于终端交互，在cli引用
     github.com/templexxx/xorsimd v0.4.1                       // 加密，aes加密代码来自于 github.com/xtaic/kcptun
     github.com/urfave/cli/v2 v2.2.0                           // linux风格参数解析
